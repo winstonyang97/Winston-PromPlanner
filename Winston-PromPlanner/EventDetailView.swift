@@ -11,7 +11,7 @@ struct EventDetailView: View {
 
     var body: some View {
         VStack {
-            HeaderView()
+            //HeaderView()
             Spacer(minLength: 60)
             VStack {
                 EventsTextView(Text1: "Event Name")

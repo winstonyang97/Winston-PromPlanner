@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-@main
+/*@main
 struct PromPlannerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashScreenView()
         }
     }
-}
+}*/

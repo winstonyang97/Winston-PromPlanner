@@ -12,12 +12,14 @@ struct HomeView1: View {
     var body: some View {
         
         ZStack {
+            
             navigationManager.currentView ?? AnyView(  // This will be HomeView1 or the view selected in SideBar
 
             VStack {
                 HeaderView(isSidebarShowing: $isSidebarShowing) //End of the very top header/logo view
                 
-                Spacer(minLength: 60)
+               Spacer(minLength: 60)
+                    .navigationBarBackButtonHidden()
                 
                 Text("Welcome Sample Name")
                     .font(.custom("MontserratRoman-Regular", size: 28))

@@ -7,13 +7,85 @@
 
 import SwiftUI
 
+struct SecureTextField2: View {
+    @State private var isSecureField: Bool = true
+    @Binding var text: String
+    @State private var showWarning = false
+   
+    
+    
+    var body: some View {
+        
+        HStack {
+            Spacer()
+                .navigationBarBackButtonHidden()
+            if isSecureField {
+                SecureField("", text: self.$text, prompt: Text("Password").foregroundColor(.black.opacity(0.9)).font(.custom("SourceSansPro-ExtraLight", size: 22)))
+            } else {
+                TextField(text, text: $text)
+               
+            }
+        }.overlay(alignment: .trailing) {
+            Image(systemName: isSecureField ? "eye.slash": "eye")
+                .onTapGesture {
+                    isSecureField.toggle()
+                }
+        }
+        if showWarning {
+            Text("Please fill in all fields")
+                .foregroundColor(.red)
+        }
+    }
+}
+
+struct SecureTextField3: View {
+    @State private var isSecureField: Bool = true
+    @Binding var text2: String
+    @State private var showWarning = false
+   
+    
+    
+    var body: some View {
+        
+        HStack {
+            Spacer()
+                .navigationBarBackButtonHidden()
+            if isSecureField {
+                SecureField("", text: self.$text2, prompt: Text("Confirm Password").foregroundColor(.black.opacity(0.9)).font(.custom("SourceSansPro-ExtraLight", size: 22)))
+            } else {
+                TextField(text2, text: $text2)
+               
+            }
+        }.overlay(alignment: .trailing) {
+            Image(systemName: isSecureField ? "eye.slash": "eye")
+                .onTapGesture {
+                    isSecureField.toggle()
+                }
+        }
+        if showWarning {
+            Text("Please fill in all fields")
+                .foregroundColor(.red)
+        }
+    }
+}
+
 struct SignupView2: View {
+    class NavigationManager: ObservableObject {
+        @Published var isNavigationActiveToSignupView = false
+        @Published var isNavigationActiveToSignupView3 = false
+    }
     @State var username: String = ""
     @State var password: String = ""
     @State var confirmation: String = ""
     @State private var showRandomView = false
     @State private var errorMessage: String?
     @State var showAlert: Bool = false
+    @State private var showWarning = false
+    @State private var showWarning2 = false
+    @Environment(\.dismiss) private var dismiss
+    @ObservedObject var navigationManager = NavigationManager()
+    @State private var isSignupView = false
+    @State private var isPasswordMatch = true
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -22,18 +94,20 @@ struct SignupView2: View {
     var lastName: String
     
     var body: some View {
-        NavigationView {
+        //NavigationView {
             VStack {
+                Spacer()
+                    .navigationBarBackButtonHidden()
                 HStack {
                     Rectangle()
-                        .fill(Color("RectangleBlack"))
-                        .frame(width: 105, height: 10)
-                    Image("Logomain")
+                        .fill(Color.black)
+                        .frame(width: 105, height: 5)
+                    Image("promplannerlogomain")
                         .resizable()
                         .frame(width: 95, height: 68)
                     Rectangle()
-                        .fill(Color("RectangleBlack"))
-                        .frame(width: 105, height: 10)
+                        .fill(Color.black)
+                        .frame(width: 105, height: 5)
                     
                 }
                 .padding(.leading)
@@ -53,6 +127,7 @@ struct SignupView2: View {
                     Spacer()
                     VStack {
                         TextField("", text: self.$username, prompt: Text("Username").foregroundColor(.black.opacity(0.9)).font(.custom("SourceSansPro-ExtraLight", size: 22)))
+                            .autocapitalization(.none)
                             .padding(.leading, 15)
                             .frame(height: 58)
                             .textFieldStyle(PlainTextFieldStyle())
@@ -61,7 +136,7 @@ struct SignupView2: View {
                             .cornerRadius(16)
                             .padding([.horizontal], 24)
                             .padding(.bottom, 20)
-                        SecureField("", text: self.$password, prompt: Text("Password").foregroundColor(.black.opacity(0.9)).font(.custom("SourceSansPro-ExtraLight", size: 22)))
+                        SecureTextField2(text: $password)
                             .padding(.leading, 15)
                             .frame(height: 58)
                             .textFieldStyle(PlainTextFieldStyle())
@@ -70,7 +145,7 @@ struct SignupView2: View {
                             .cornerRadius(16)
                             .padding([.horizontal], 24)
                             .padding(.bottom, 20)
-                        SecureField("", text: self.$confirmation, prompt: Text("Confirm Password").foregroundColor(.black.opacity(0.9)).font(.custom("SourceSansPro-ExtraLight", size: 22)))
+                        SecureTextField3(text2: $confirmation)
                             .padding(.leading, 15)
                             .frame(height: 58)
                             .textFieldStyle(PlainTextFieldStyle())
@@ -79,7 +154,91 @@ struct SignupView2: View {
                             .cornerRadius(16)
                             .padding([.horizontal], 24)
                             .padding(.bottom, 20)
-                        HStack {
+                        
+                        VStack {
+                            Spacer()
+                            if showWarning {
+                                Text("Please fill in all fields")
+                                    .foregroundColor(.red)
+                            }
+                            
+                            if showWarning2 {
+                                Text("Passwords do not match, please try again")
+                                    .foregroundColor(.red)
+                            }
+                            HStack {
+                                Spacer()
+                                Button(action: {dismiss()
+                                    
+                                   
+                                    isSignupView = true
+                                }) {
+                                    Image(systemName: "chevron.left")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
+                                        .foregroundColor(Color("Pink1"))
+                                    
+                                    
+                                }
+                                /*.background(
+                                    NavigationLink("", destination: SignupView(), isActive: $isSignupView)
+                                        .opacity(0)
+                                )*/
+                                
+                                
+                                
+                                
+                                
+                                
+                                .environmentObject(navigationManager)
+                                .navigationBarBackButtonHidden(true)
+                                Spacer()
+                                
+                                Button(action: {
+                                    if username.isEmpty || password.isEmpty || confirmation.isEmpty {
+                                        print("User input is null or empty")
+                                        showWarning = true
+                                        showWarning2 = false
+                                        
+                                        
+                                    } else if password != confirmation {
+                                        showWarning2 = true
+                                        showWarning = false
+                                        print("The password do not match")
+                                    } else {
+                                        showWarning = false
+                                        showWarning2 = false
+                                        print("User input is not null")
+                                        navigationManager.isNavigationActiveToSignupView3 = true
+                                    }}) {
+                                        Image(systemName: "chevron.right")
+                                            .resizable()
+                                            .frame(width: 20, height: 20)
+                                            .foregroundColor(Color("Pink1"))
+                                        
+                                    }
+                                    .background(
+                                        NavigationLink("", destination: SignupView3(), isActive: $navigationManager.isNavigationActiveToSignupView3)
+                                            .opacity(0)
+                                    )
+                                
+                                    .environmentObject(navigationManager)
+                                    .navigationBarBackButtonHidden(true)
+                                Spacer()
+                                
+                            }
+                            Spacer()
+                            Spacer()
+                        }
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                      /*  HStack {
                             Button(action: {
                                 self.presentationMode.wrappedValue.dismiss()
                             }, label: {
@@ -122,7 +281,7 @@ struct SignupView2: View {
                                 }
                             }
                         }
-                        .position(x: 195, y:177)
+                        .position(x: 195, y:177)*/
                         
                         
                         
@@ -134,7 +293,7 @@ struct SignupView2: View {
             }
         }
     }
-}
+//}
     
 struct SignupView2_Previews: PreviewProvider {
     static var previews: some View {

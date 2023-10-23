@@ -8,24 +8,34 @@
 import SwiftUI
 
 struct SignupView3: View {
+    class NavigationManager: ObservableObject {
+        @Published var isNavigationActiveToSignupView2 = false
+        @Published var isNavigationActiveToSignupView4 = false
+    }
     @State var schoolName: String = ""
     @State var Country: String = ""
     @State var State: String = ""
     @State var Grade: String = ""
     @State private var rightArrowClicked: Bool? = nil
+    @ObservedObject var navigationManager = NavigationManager()
+    @State private var showWarning = false
+    @Environment(\.dismiss) private var dismiss
+    @State private var isSignupView2 = false
     var body: some View {
-        NavigationView {
+        //NavigationView {
             VStack {
+                Spacer()
+                    .navigationBarBackButtonHidden()
                 HStack {
                     Rectangle()
-                        .fill(Color("RectangleBlack"))
-                        .frame(width: 105, height: 10)
-                    Image("Logomain")
+                        .fill(Color.black)
+                        .frame(width: 105, height: 5)
+                    Image("promplannerlogomain")
                         .resizable()
                         .frame(width: 95, height: 68)
                     Rectangle()
-                        .fill(Color("RectangleBlack"))
-                        .frame(width: 105, height: 10)
+                        .fill(Color.black)
+                        .frame(width: 105, height: 5)
                     
                 }
                 .padding(.leading)
@@ -81,7 +91,70 @@ struct SignupView3: View {
                         Spacer()
                         Spacer()
                         Spacer()
-                        HStack {
+                        VStack {
+                            Spacer()
+                            if showWarning {
+                                Text("Please fill in all fields")
+                                    .foregroundColor(.red)
+                            }
+                            HStack {
+                                Spacer()
+                                Button(action: {dismiss()
+                                    
+                                   
+                                    isSignupView2 = true
+                                }) {
+                                    Image(systemName: "chevron.left")
+                                        .resizable()
+                                        .frame(width: 20, height: 20)
+                                        .foregroundColor(Color("Pink1"))
+                                    
+                                    
+                                }
+                                /*.background(
+                                    NavigationLink("", destination: SignupView(), isActive: $isSignupView)
+                                        .opacity(0)
+                                )*/
+                                
+                                
+                                
+                                
+                                
+                                
+                                .environmentObject(navigationManager)
+                                .navigationBarBackButtonHidden(true)
+                                Spacer()
+                                
+                                Button(action: {
+                                    if schoolName.isEmpty || State.isEmpty || Country.isEmpty || Grade.isEmpty {
+                                        print("User input is null or empty")
+                                        showWarning = true
+                                        
+                                    } else {
+                                        showWarning = false
+                                        print("User input is not null")
+                                        navigationManager.isNavigationActiveToSignupView4 = true
+                                    }}) {
+                                        Image(systemName: "chevron.right")
+                                            .resizable()
+                                            .frame(width: 20, height: 20)
+                                            .foregroundColor(Color("Pink1"))
+                                        
+                                    }
+                                    .background(
+                                        NavigationLink("", destination: SignupView4(), isActive: $navigationManager.isNavigationActiveToSignupView4)
+                                            .opacity(0)
+                                    )
+                                
+                                    .environmentObject(navigationManager)
+                                    .navigationBarBackButtonHidden(true)
+                                Spacer()
+                                
+                            }
+                            Spacer()
+                            Spacer()
+                        }
+                        /*HStack {
                             Button(action: {
                                 print("Left button tapped")
                             }, label: {
@@ -107,17 +180,17 @@ struct SignupView3: View {
                             
                             
                         }
-                        .position(x: 195, y: 130)
+                        .position(x: 195, y: 130)*/
 
                         
                     }
-                    Spacer(minLength: 100)
+                    //Spacer(minLength: 100)
                 }
             }
         }
         
     }
-}
+//}
 
 
 struct SignupView3_Previews: PreviewProvider {

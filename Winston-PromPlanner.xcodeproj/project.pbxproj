@@ -7,22 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D6197272AC7AAA300A52483 /* NavigatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6197262AC7AAA300A52483 /* NavigatingView.swift */; };
 		3DD01E0B2AC5C43900817D39 /* Winston_PromPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E0A2AC5C43900817D39 /* Winston_PromPlannerApp.swift */; };
-		3DD01E0D2AC5C43900817D39 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E0C2AC5C43900817D39 /* ContentView.swift */; };
-		3DD01E0F2AC5C43B00817D39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DD01E0E2AC5C43B00817D39 /* Assets.xcassets */; };
-		3DD01E122AC5C43B00817D39 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DD01E112AC5C43B00817D39 /* Preview Assets.xcassets */; };
 		3DD01E142AC5C43B00817D39 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E132AC5C43B00817D39 /* Persistence.swift */; };
 		3DD01E172AC5C43B00817D39 /* Winston_PromPlanner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E152AC5C43B00817D39 /* Winston_PromPlanner.xcdatamodeld */; };
+		3DD01E352AC5C47A00817D39 /* PromPlannerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E1D2AC5C47900817D39 /* PromPlannerApp.swift */; };
+		3DD01E362AC5C47A00817D39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DD01E1E2AC5C47900817D39 /* Assets.xcassets */; };
+		3DD01E382AC5C47A00817D39 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E202AC5C47900817D39 /* SignupView.swift */; };
+		3DD01E392AC5C47A00817D39 /* Preview Content in Resources */ = {isa = PBXBuildFile; fileRef = 3DD01E212AC5C47900817D39 /* Preview Content */; };
+		3DD01E3A2AC5C47A00817D39 /* SignupView4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E222AC5C47900817D39 /* SignupView4.swift */; };
+		3DD01E3B2AC5C47A00817D39 /* EventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E232AC5C47900817D39 /* EventsListView.swift */; };
+		3DD01E3C2AC5C47A00817D39 /* ReportBugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E242AC5C47900817D39 /* ReportBugView.swift */; };
+		3DD01E3D2AC5C47A00817D39 /* EditView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E252AC5C47900817D39 /* EditView1.swift */; };
+		3DD01E3E2AC5C47A00817D39 /* Montserrat-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3DD01E262AC5C47900817D39 /* Montserrat-VariableFont_wght.ttf */; };
+		3DD01E3F2AC5C47A00817D39 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E272AC5C47900817D39 /* EventDetailView.swift */; };
+		3DD01E402AC5C47A00817D39 /* EditView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E282AC5C47A00817D39 /* EditView2.swift */; };
+		3DD01E412AC5C47A00817D39 /* EditView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E292AC5C47A00817D39 /* EditView3.swift */; };
+		3DD01E422AC5C47A00817D39 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3DD01E2A2AC5C47A00817D39 /* Montserrat-ExtraLight.ttf */; };
+		3DD01E432AC5C47A00817D39 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E2B2AC5C47A00817D39 /* LoginView.swift */; };
+		3DD01E442AC5C47A00817D39 /* HomeView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E2C2AC5C47A00817D39 /* HomeView1.swift */; };
+		3DD01E452AC5C47A00817D39 /* SignupView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E2D2AC5C47A00817D39 /* SignupView2.swift */; };
+		3DD01E472AC5C47A00817D39 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E2F2AC5C47A00817D39 /* SidebarView.swift */; };
+		3DD01E482AC5C47A00817D39 /* SignupView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E302AC5C47A00817D39 /* SignupView3.swift */; };
+		3DD01E492AC5C47A00817D39 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E312AC5C47A00817D39 /* ContentView.swift */; };
+		3DD01E4A2AC5C47A00817D39 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3DD01E322AC5C47A00817D39 /* SourceSansPro-Regular.ttf */; };
+		3DD01E4B2AC5C47A00817D39 /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3DD01E332AC5C47A00817D39 /* SourceSansPro-SemiBold.ttf */; };
+		3DD01E4C2AC5C47A00817D39 /* SourceSansPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3DD01E342AC5C47A00817D39 /* SourceSansPro-ExtraLight.ttf */; };
+		3DD01E4E2AC5C4EB00817D39 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD01E4D2AC5C4EB00817D39 /* SplashScreenView.swift */; };
+		3DF572A82AE1DBFB0039A9E3 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 3DF572A72AE1DBFB0039A9E3 /* iPhoneNumberField */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D6197262AC7AAA300A52483 /* NavigatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatingView.swift; sourceTree = "<group>"; };
 		3DD01E072AC5C43900817D39 /* Winston-PromPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Winston-PromPlanner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD01E0A2AC5C43900817D39 /* Winston_PromPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Winston_PromPlannerApp.swift; sourceTree = "<group>"; };
-		3DD01E0C2AC5C43900817D39 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		3DD01E0E2AC5C43B00817D39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3DD01E112AC5C43B00817D39 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3DD01E132AC5C43B00817D39 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3DD01E162AC5C43B00817D39 /* Winston_PromPlanner.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Winston_PromPlanner.xcdatamodel; sourceTree = "<group>"; };
+		3DD01E1D2AC5C47900817D39 /* PromPlannerApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromPlannerApp.swift; sourceTree = "<group>"; };
+		3DD01E1E2AC5C47900817D39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3DD01E202AC5C47900817D39 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		3DD01E212AC5C47900817D39 /* Preview Content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Preview Content"; sourceTree = "<group>"; };
+		3DD01E222AC5C47900817D39 /* SignupView4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView4.swift; sourceTree = "<group>"; };
+		3DD01E232AC5C47900817D39 /* EventsListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsListView.swift; sourceTree = "<group>"; };
+		3DD01E242AC5C47900817D39 /* ReportBugView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportBugView.swift; sourceTree = "<group>"; };
+		3DD01E252AC5C47900817D39 /* EditView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView1.swift; sourceTree = "<group>"; };
+		3DD01E262AC5C47900817D39 /* Montserrat-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		3DD01E272AC5C47900817D39 /* EventDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
+		3DD01E282AC5C47A00817D39 /* EditView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView2.swift; sourceTree = "<group>"; };
+		3DD01E292AC5C47A00817D39 /* EditView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditView3.swift; sourceTree = "<group>"; };
+		3DD01E2A2AC5C47A00817D39 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		3DD01E2B2AC5C47A00817D39 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		3DD01E2C2AC5C47A00817D39 /* HomeView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView1.swift; sourceTree = "<group>"; };
+		3DD01E2D2AC5C47A00817D39 /* SignupView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView2.swift; sourceTree = "<group>"; };
+		3DD01E2E2AC5C47A00817D39 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DD01E2F2AC5C47A00817D39 /* SidebarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		3DD01E302AC5C47A00817D39 /* SignupView3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView3.swift; sourceTree = "<group>"; };
+		3DD01E312AC5C47A00817D39 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3DD01E322AC5C47A00817D39 /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		3DD01E332AC5C47A00817D39 /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
+		3DD01E342AC5C47A00817D39 /* SourceSansPro-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLight.ttf"; sourceTree = "<group>"; };
+		3DD01E4D2AC5C4EB00817D39 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DF572A82AE1DBFB0039A9E3 /* iPhoneNumberField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,21 +101,35 @@
 			isa = PBXGroup;
 			children = (
 				3DD01E0A2AC5C43900817D39 /* Winston_PromPlannerApp.swift */,
-				3DD01E0C2AC5C43900817D39 /* ContentView.swift */,
-				3DD01E0E2AC5C43B00817D39 /* Assets.xcassets */,
+				3DD01E1E2AC5C47900817D39 /* Assets.xcassets */,
+				3DD01E312AC5C47A00817D39 /* ContentView.swift */,
+				3DD01E4D2AC5C4EB00817D39 /* SplashScreenView.swift */,
+				3D6197262AC7AAA300A52483 /* NavigatingView.swift */,
+				3DD01E252AC5C47900817D39 /* EditView1.swift */,
+				3DD01E282AC5C47A00817D39 /* EditView2.swift */,
+				3DD01E292AC5C47A00817D39 /* EditView3.swift */,
+				3DD01E272AC5C47900817D39 /* EventDetailView.swift */,
+				3DD01E232AC5C47900817D39 /* EventsListView.swift */,
+				3DD01E2C2AC5C47A00817D39 /* HomeView1.swift */,
+				3DD01E2E2AC5C47A00817D39 /* Info.plist */,
+				3DD01E2B2AC5C47A00817D39 /* LoginView.swift */,
+				3DD01E2A2AC5C47A00817D39 /* Montserrat-ExtraLight.ttf */,
+				3DD01E262AC5C47900817D39 /* Montserrat-VariableFont_wght.ttf */,
+				3DD01E212AC5C47900817D39 /* Preview Content */,
+				3DD01E1D2AC5C47900817D39 /* PromPlannerApp.swift */,
+				3DD01E242AC5C47900817D39 /* ReportBugView.swift */,
+				3DD01E2F2AC5C47A00817D39 /* SidebarView.swift */,
+				3DD01E202AC5C47900817D39 /* SignupView.swift */,
+				3DD01E2D2AC5C47A00817D39 /* SignupView2.swift */,
+				3DD01E302AC5C47A00817D39 /* SignupView3.swift */,
+				3DD01E222AC5C47900817D39 /* SignupView4.swift */,
+				3DD01E342AC5C47A00817D39 /* SourceSansPro-ExtraLight.ttf */,
+				3DD01E322AC5C47A00817D39 /* SourceSansPro-Regular.ttf */,
+				3DD01E332AC5C47A00817D39 /* SourceSansPro-SemiBold.ttf */,
 				3DD01E132AC5C43B00817D39 /* Persistence.swift */,
 				3DD01E152AC5C43B00817D39 /* Winston_PromPlanner.xcdatamodeld */,
-				3DD01E102AC5C43B00817D39 /* Preview Content */,
 			);
 			path = "Winston-PromPlanner";
-			sourceTree = "<group>";
-		};
-		3DD01E102AC5C43B00817D39 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				3DD01E112AC5C43B00817D39 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +148,9 @@
 			dependencies = (
 			);
 			name = "Winston-PromPlanner";
+			packageProductDependencies = (
+				3DF572A72AE1DBFB0039A9E3 /* iPhoneNumberField */,
+			);
 			productName = "Winston-PromPlanner";
 			productReference = 3DD01E072AC5C43900817D39 /* Winston-PromPlanner.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +179,9 @@
 				Base,
 			);
 			mainGroup = 3DD01DFE2AC5C43900817D39;
+			packageReferences = (
+				3DF572A62AE1DBFB0039A9E3 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
+			);
 			productRefGroup = 3DD01E082AC5C43900817D39 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,8 +196,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DD01E122AC5C43B00817D39 /* Preview Assets.xcassets in Resources */,
-				3DD01E0F2AC5C43B00817D39 /* Assets.xcassets in Resources */,
+				3DD01E3E2AC5C47A00817D39 /* Montserrat-VariableFont_wght.ttf in Resources */,
+				3DD01E4B2AC5C47A00817D39 /* SourceSansPro-SemiBold.ttf in Resources */,
+				3DD01E392AC5C47A00817D39 /* Preview Content in Resources */,
+				3DD01E4C2AC5C47A00817D39 /* SourceSansPro-ExtraLight.ttf in Resources */,
+				3DD01E4A2AC5C47A00817D39 /* SourceSansPro-Regular.ttf in Resources */,
+				3DD01E362AC5C47A00817D39 /* Assets.xcassets in Resources */,
+				3DD01E422AC5C47A00817D39 /* Montserrat-ExtraLight.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,9 +214,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DD01E142AC5C43B00817D39 /* Persistence.swift in Sources */,
-				3DD01E0D2AC5C43900817D39 /* ContentView.swift in Sources */,
+				3DD01E472AC5C47A00817D39 /* SidebarView.swift in Sources */,
+				3DD01E3A2AC5C47A00817D39 /* SignupView4.swift in Sources */,
+				3DD01E412AC5C47A00817D39 /* EditView3.swift in Sources */,
 				3DD01E172AC5C43B00817D39 /* Winston_PromPlanner.xcdatamodeld in Sources */,
+				3DD01E402AC5C47A00817D39 /* EditView2.swift in Sources */,
+				3DD01E3C2AC5C47A00817D39 /* ReportBugView.swift in Sources */,
+				3DD01E482AC5C47A00817D39 /* SignupView3.swift in Sources */,
+				3DD01E3D2AC5C47A00817D39 /* EditView1.swift in Sources */,
+				3DD01E352AC5C47A00817D39 /* PromPlannerApp.swift in Sources */,
+				3DD01E3F2AC5C47A00817D39 /* EventDetailView.swift in Sources */,
+				3DD01E4E2AC5C4EB00817D39 /* SplashScreenView.swift in Sources */,
 				3DD01E0B2AC5C43900817D39 /* Winston_PromPlannerApp.swift in Sources */,
+				3DD01E432AC5C47A00817D39 /* LoginView.swift in Sources */,
+				3DD01E442AC5C47A00817D39 /* HomeView1.swift in Sources */,
+				3DD01E492AC5C47A00817D39 /* ContentView.swift in Sources */,
+				3DD01E382AC5C47A00817D39 /* SignupView.swift in Sources */,
+				3DD01E452AC5C47A00817D39 /* SignupView2.swift in Sources */,
+				3DD01E3B2AC5C47A00817D39 /* EventsListView.swift in Sources */,
+				3D6197272AC7AAA300A52483 /* NavigatingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +433,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3DF572A62AE1DBFB0039A9E3 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3DF572A72AE1DBFB0039A9E3 /* iPhoneNumberField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3DF572A62AE1DBFB0039A9E3 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
+			productName = iPhoneNumberField;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		3DD01E152AC5C43B00817D39 /* Winston_PromPlanner.xcdatamodeld */ = {
