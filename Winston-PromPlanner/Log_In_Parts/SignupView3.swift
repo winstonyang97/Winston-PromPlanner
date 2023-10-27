@@ -1,98 +1,26 @@
 //
-//  SignupView2.swift
+//  SignupView3.swift
 //  PromPlanner
 //
-//  Created by Chirag Shah on 2023-03-27.
+//  Created by Chirag Shah on 2023-03-29.
 //
 
 import SwiftUI
 
-struct SecureTextField2: View {
-    @State private var isSecureField: Bool = true
-    @Binding var text: String
-    @State private var showWarning = false
-   
-    
-    
-    var body: some View {
-        
-        HStack {
-            Spacer()
-                .navigationBarBackButtonHidden()
-            if isSecureField {
-                SecureField("", text: self.$text, prompt: Text("Password").foregroundColor(.black.opacity(0.9)).font(.custom("SourceSansPro-ExtraLight", size: 22)))
-            } else {
-                TextField(text, text: $text)
-               
-            }
-        }.overlay(alignment: .trailing) {
-            Image(systemName: isSecureField ? "eye.slash": "eye")
-                .onTapGesture {
-                    isSecureField.toggle()
-                }
-        }
-        if showWarning {
-            Text("Please fill in all fields")
-                .foregroundColor(.red)
-        }
-    }
-}
-
-struct SecureTextField3: View {
-    @State private var isSecureField: Bool = true
-    @Binding var text2: String
-    @State private var showWarning = false
-   
-    
-    
-    var body: some View {
-        
-        HStack {
-            Spacer()
-                .navigationBarBackButtonHidden()
-            if isSecureField {
-                SecureField("", text: self.$text2, prompt: Text("Confirm Password").foregroundColor(.black.opacity(0.9)).font(.custom("SourceSansPro-ExtraLight", size: 22)))
-            } else {
-                TextField(text2, text: $text2)
-               
-            }
-        }.overlay(alignment: .trailing) {
-            Image(systemName: isSecureField ? "eye.slash": "eye")
-                .onTapGesture {
-                    isSecureField.toggle()
-                }
-        }
-        if showWarning {
-            Text("Please fill in all fields")
-                .foregroundColor(.red)
-        }
-    }
-}
-
-struct SignupView2: View {
+struct SignupView3: View {
     class NavigationManager: ObservableObject {
-        @Published var isNavigationActiveToSignupView = false
-        @Published var isNavigationActiveToSignupView3 = false
+        @Published var isNavigationActiveToSignupView2 = false
+        @Published var isNavigationActiveToSignupView4 = false
     }
-    @State var username: String = ""
-    @State var password: String = ""
-    @State var confirmation: String = ""
-    @State private var showRandomView = false
-    @State private var errorMessage: String?
-    @State var showAlert: Bool = false
-    @State private var showWarning = false
-    @State private var showWarning2 = false
-    @Environment(\.dismiss) private var dismiss
+    @State var schoolName: String = ""
+    @State var Country: String = ""
+    @State var State: String = ""
+    @State var Grade: String = ""
+    @State private var rightArrowClicked: Bool? = nil
     @ObservedObject var navigationManager = NavigationManager()
-    @State private var isSignupView = false
-    @State private var isPasswordMatch = true
-    
-    @Environment(\.presentationMode) var presentationMode
-    
-    
-    var firstName: String
-    var lastName: String
-    
+    @State private var showWarning = false
+    @Environment(\.dismiss) private var dismiss
+    @State private var isSignupView2 = false
     var body: some View {
         //NavigationView {
             VStack {
@@ -118,16 +46,13 @@ struct SignupView2: View {
                         .font(.custom("MontserratRoman-Regular", size: 35))
                         .foregroundColor(Color.black)
                         .padding(.bottom, 5)
-                    Text("Hello \(firstName) \(lastName), let’s create an account")
+                    Text("Connect your account to a school")
                         .font(.custom("MontserratRoman-ExtraLight", size: 20))
-                        .padding(.bottom, 35)
+                        .padding(.bottom, 10)
                         .foregroundColor(Color.black)
                     
-                        .multilineTextAlignment(.center)
-                    Spacer()
                     VStack {
-                        TextField("", text: self.$username, prompt: Text("Username").foregroundColor(.black.opacity(0.9)).font(.custom("SourceSansPro-ExtraLight", size: 22)))
-                            .autocapitalization(.none)
+                        TextField("", text: self.$schoolName, prompt: Text("School Name").foregroundColor(.black.opacity(0.9)).font(.custom("SourceSansPro-ExtraLight", size: 22)))
                             .padding(.leading, 15)
                             .frame(height: 58)
                             .textFieldStyle(PlainTextFieldStyle())
@@ -136,7 +61,7 @@ struct SignupView2: View {
                             .cornerRadius(16)
                             .padding([.horizontal], 24)
                             .padding(.bottom, 20)
-                        SecureTextField2(text: $password)
+                        TextField("", text: self.$Country, prompt: Text("Country").foregroundColor(.black.opacity(0.9)).font(.custom("SourceSansPro-ExtraLight", size: 22)))
                             .padding(.leading, 15)
                             .frame(height: 58)
                             .textFieldStyle(PlainTextFieldStyle())
@@ -145,7 +70,16 @@ struct SignupView2: View {
                             .cornerRadius(16)
                             .padding([.horizontal], 24)
                             .padding(.bottom, 20)
-                        SecureTextField3(text2: $confirmation)
+                        TextField("", text: self.$State, prompt: Text("State/Province").foregroundColor(.black.opacity(0.9)).font(.custom("SourceSansPro-ExtraLight", size: 22)))
+                            .padding(.leading, 15)
+                            .frame(height: 58)
+                            .textFieldStyle(PlainTextFieldStyle())
+                            .padding([.horizontal], 24)
+                            .background(Color("textfieldgray"))
+                            .cornerRadius(16)
+                            .padding([.horizontal], 24)
+                            .padding(.bottom, 20)
+                        TextField("", text: self.$Grade, prompt: Text("Grade").foregroundColor(.black.opacity(0.9)).font(.custom("SourceSansPro-ExtraLight", size: 22)))
                             .padding(.leading, 15)
                             .frame(height: 58)
                             .textFieldStyle(PlainTextFieldStyle())
@@ -154,16 +88,13 @@ struct SignupView2: View {
                             .cornerRadius(16)
                             .padding([.horizontal], 24)
                             .padding(.bottom, 20)
-                        
+                        Spacer()
+                        Spacer()
+                        Spacer()
                         VStack {
                             Spacer()
                             if showWarning {
                                 Text("Please fill in all fields")
-                                    .foregroundColor(.red)
-                            }
-                            
-                            if showWarning2 {
-                                Text("Passwords do not match, please try again")
                                     .foregroundColor(.red)
                             }
                             HStack {
@@ -171,7 +102,7 @@ struct SignupView2: View {
                                 Button(action: {dismiss()
                                     
                                    
-                                    isSignupView = true
+                                    isSignupView2 = true
                                 }) {
                                     Image(systemName: "chevron.left")
                                         .resizable()
@@ -195,21 +126,14 @@ struct SignupView2: View {
                                 Spacer()
                                 
                                 Button(action: {
-                                    if username.isEmpty || password.isEmpty || confirmation.isEmpty {
+                                    if schoolName.isEmpty || State.isEmpty || Country.isEmpty || Grade.isEmpty {
                                         print("User input is null or empty")
                                         showWarning = true
-                                        showWarning2 = false
                                         
-                                        
-                                    } else if password != confirmation {
-                                        showWarning2 = true
-                                        showWarning = false
-                                        print("The password do not match")
                                     } else {
                                         showWarning = false
-                                        showWarning2 = false
                                         print("User input is not null")
-                                        navigationManager.isNavigationActiveToSignupView3 = true
+                                        navigationManager.isNavigationActiveToSignupView4 = true
                                     }}) {
                                         Image(systemName: "chevron.right")
                                             .resizable()
@@ -218,7 +142,7 @@ struct SignupView2: View {
                                         
                                     }
                                     .background(
-                                        NavigationLink("", destination: SignupView3(), isActive: $navigationManager.isNavigationActiveToSignupView3)
+                                        NavigationLink("", destination: SignupView4(), isActive: $navigationManager.isNavigationActiveToSignupView4)
                                             .opacity(0)
                                     )
                                 
@@ -230,17 +154,9 @@ struct SignupView2: View {
                             Spacer()
                             Spacer()
                         }
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                      /*  HStack {
+                        /*HStack {
                             Button(action: {
-                                self.presentationMode.wrappedValue.dismiss()
+                                print("Left button tapped")
                             }, label: {
                                 Image("leftarrow")
                                     .resizable()
@@ -248,55 +164,37 @@ struct SignupView2: View {
                                     .padding(.trailing, 18)
                             })
                             Rectangle()
-                            
                                 .fill(Color("RectangleBlack"))
                                 .frame(width: 140, height: 10)
                             NavigationLink(
-                                destination: SignupView3().navigationBarBackButtonHidden(true),
-                                isActive: $showRandomView) {
-                                Button(action: {
-                                    if username.isEmpty || password.isEmpty {
-                                        errorMessage = "Empty fields. Please fix."
-                                        self.showAlert = true
-                                    } else if password != confirmation {
-                                        errorMessage = "Wrong values."
-                                        self.showAlert = true
-                                    } else {
-                                        showRandomView = true
-                                        self.showAlert = false
-                                    }
-                                    
-                                }, label: {
+                                destination: SignupView4().navigationBarBackButtonHidden(true),
+                                tag: true,
+                                selection: $rightArrowClicked,
+                                label: {
                                     Image("rightarrow")
                                         .resizable()
                                         .frame(width: 65, height: 55)
                                         .padding(.leading, 5)
-                                })
-                                .alert(isPresented: $showAlert) {
-                                    if let errorMessage = errorMessage {
-                                        return Alert(title: Text("Error"), message: Text(errorMessage), dismissButton: .default(Text("OK")))
-                                    } else {
-                                        return Alert(title: Text("Error"), message: Text("Unknown error."), dismissButton: .default(Text("OK")))
-                                    }
                                 }
-                            }
+                            )
+                            
+                            
                         }
-                        .position(x: 195, y:177)*/
+                        .position(x: 195, y: 130)*/
+
                         
-                        
-                        
-                        Spacer()
-                        Spacer()
-                        Spacer()
                     }
+                    //Spacer(minLength: 100)
                 }
             }
         }
+        
     }
 //}
-    
-struct SignupView2_Previews: PreviewProvider {
+
+
+struct SignupView3_Previews: PreviewProvider {
     static var previews: some View {
-        SignupView2(firstName: "John", lastName: "Doe")
+        SignupView3()
     }
 }
