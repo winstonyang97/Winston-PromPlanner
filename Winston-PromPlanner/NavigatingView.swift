@@ -35,6 +35,8 @@ struct NavigatingView: View {
     }
 }
 
-#Preview {
-    NavigatingView()
+struct NavigatingView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigatingView()
+    }
 }
