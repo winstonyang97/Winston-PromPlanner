@@ -85,9 +85,9 @@ struct EditView3: View {
                             tag: true,
                             selection: $rightArrowClicked,
                             label: {
-                                Image("leftarrow")
+                                Image(systemName: "arrow.left")
                                     .resizable()
-                                    .frame(width: 65, height: 55)
+                                    .frame(width: 30, height: 25)
                                     .padding(.leading, 5)
                             }
                         )

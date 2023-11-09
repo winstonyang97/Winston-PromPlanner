@@ -35,8 +35,10 @@ struct NavigatingView: View {
     }
 }
 
+#if DEBUG
 struct NavigatingView_Previews: PreviewProvider {
     static var previews: some View {
         NavigatingView()
     }
 }
+#endif

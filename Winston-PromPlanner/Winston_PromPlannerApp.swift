@@ -13,8 +13,9 @@ struct Winston_PromPlannerApp: App {
 
     var body: some Scene {
         WindowGroup {
-            SplashScreenView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//            SplashScreenView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            EditView1()
         }
     }
 }
