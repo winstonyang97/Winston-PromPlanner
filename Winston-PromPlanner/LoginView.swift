@@ -27,6 +27,8 @@ struct LoginView: View {
             .padding(.leading)
             Spacer()
             VStack(alignment: .center) {
+                
+                Text("no")
 
                 Text("Welcome to")
                     .font(.custom("MontserratRoman-Light", size: 40))
